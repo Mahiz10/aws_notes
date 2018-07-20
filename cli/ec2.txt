@@ -1,1 +1,4 @@
 
+to return instanceid & privateipaddress from a filtered set of ec2
+
+aws ec2 describe-instances --filters "Name=tag:<tag_name>,Values=<tag_value>" --query "Reservations[*].Instances[*].[InstanceId,PrivateIpAddress]" --output table
